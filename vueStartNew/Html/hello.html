@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-hello="'black'">哈哈</div>
+</div>
+    
+<script>
+Vue.directive("hello",{
+  inserted (a,bind) {
+    console.log("start")
+    a.style.background = bind.value;
+    console.log(bind.value + a)
+  }
+})
+ var vm = new Vue({
+  el: '#app',
+  data: {
+    title:"hahah"
+  },
+  methods: {
+    show(){
+      console.log(this.title)
+    }
+  }
+})
+</script>
+</body>
+</html>
